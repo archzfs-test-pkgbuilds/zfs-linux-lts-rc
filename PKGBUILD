@@ -22,7 +22,7 @@ _kernelver="4.14.82-1"
 _extramodules="4.14.82-1-lts"
 
 pkgver="${_zfsver}_$(echo ${_kernelver} | sed s/-/./g)"
-pkgrel=1
+pkgrel=2
 makedepends=("linux-lts-headers=${_kernelver}" "spl-linux-lts-headers")
 arch=("x86_64")
 url="http://zfsonlinux.org/"
@@ -47,7 +47,7 @@ package_zfs-linux-lts-rc() {
     install=zfs.install
     provides=("zfs" "spl")
     groups=("archzfs-linux-lts-rc")
-    conflicts=("zfs-dkms" "zfs-dkms-git" "zfs-dkms-rc" 'zfs-linux-lts' 'zfs-linux-lts-git' "spl-dkms" "spl-dkms-git")
+    conflicts=("zfs-dkms" "zfs-dkms-git" "zfs-dkms-rc" 'zfs-linux-lts' 'zfs-linux-lts-git' 'spl-linux-lts' "spl-dkms" "spl-dkms-git")
     cd "${srcdir}/zfs-${_zfsver/_rc*/}"
     make DESTDIR="${pkgdir}" install
     cp -r "${pkgdir}"/{lib,usr}
