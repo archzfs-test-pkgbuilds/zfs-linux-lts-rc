@@ -23,7 +23,7 @@ _extramodules="4.14.87-1-lts"
 
 pkgver="${_zfsver}_$(echo ${_kernelver} | sed s/-/./g)"
 pkgrel=1
-makedepends=("linux-lts-headers=${_kernelver}" "spl-linux-lts-headers")
+makedepends=("linux-lts-headers=${_kernelver}")
 arch=("x86_64")
 url="http://zfsonlinux.org/"
 source=("https://github.com/zfsonlinux/zfs/releases/download/zfs-${_zfsver/_/-}/zfs-${_zfsver/_/-}.tar.gz")
